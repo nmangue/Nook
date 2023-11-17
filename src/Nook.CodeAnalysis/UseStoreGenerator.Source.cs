@@ -41,9 +41,9 @@ public partial class UseStoreGenerator
             {
                 var storeTypeFqn = declaration.StoreType.GetFullyQualifiedName();
                 var stateTypeFqn = declaration.StateType.GetFullyQualifiedName();
-                using (document.WriteBlock($"public static {stateTypeFqn} GetState(this global::Pinia.Core.IUse<{storeTypeFqn}> value)"))
+                using (document.WriteBlock($"public static {stateTypeFqn} GetState(this global::Nook.Core.IUse<{storeTypeFqn}> value)"))
                 {
-                    document.WriteLine($"return ((global::Pinia.Core.Use<{storeTypeFqn}>)value).Instance.CurrentState;");
+                    document.WriteLine($"return ((global::Nook.Core.Use<{storeTypeFqn}>)value).Instance.CurrentState;");
                 }
 
                 foreach (var action in actions)
@@ -55,9 +55,9 @@ public partial class UseStoreGenerator
 
                     string actionName = action.MethodSymbol.Name;
                     var returnType = action.IsAsync ? "async Task" : "void";
-                    using (document.WriteBlock($"public static {returnType} {actionName}(this global::Pinia.Core.IUse<{storeTypeFqn}> value{GenerateParameters(callParameters)})"))
+                    using (document.WriteBlock($"public static {returnType} {actionName}(this global::Nook.Core.IUse<{storeTypeFqn}> value{GenerateParameters(callParameters)})"))
                     {
-                        document.WriteLine($"var implementation = (global::Pinia.Core.Use<{storeTypeFqn}>)value;");
+                        document.WriteLine($"var implementation = (global::Nook.Core.Use<{storeTypeFqn}>)value;");
 
                         void WriteStateUpdate()
                         {

@@ -41,10 +41,10 @@ internal static class Extensions
         => parameterSymbol.HasAttribute("global::Microsoft.AspNetCore.Mvc.FromServicesAttribute");
 
     public static bool HasBindFromServicesAttribute(this IParameterSymbol parameterSymbol)
-        => parameterSymbol.HasAttribute("global::Pinia.Core.BindFromServicesAttribute");
+        => parameterSymbol.HasAttribute("global::Nook.Core.BindFromServicesAttribute");
 
     public static bool HasActionAttribute(this IMethodSymbol method)
-        => method.HasAttribute("global::Pinia.Core.ActionAttribute");
+        => method.HasAttribute("global::Nook.Core.ActionAttribute");
 
     public static bool HasAttribute(this ISymbol parameterSymbol, string attributeClassFqn) 
         => parameterSymbol.GetAttributes().Any(a => a.AttributeClass?.GetFullyQualifiedName() == attributeClassFqn);
