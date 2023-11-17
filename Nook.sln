@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D33B0272-0540-4F0B-A198-4ED0CD2E8EF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nook.Core", "src\Nook.Core\Nook.Core.csproj", "{8844496A-240B-425C-9B31-3AA8404B25BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nook.CodeAnalysis", "src\Nook.CodeAnalysis\Nook.CodeAnalysis.csproj", "{9BEA1134-11DA-4DFF-98AA-815529C83E90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2F2150D8-1CCF-4EA1-8A54-E1AF2BB1D023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nook.Core.Tests", "tests\Nook.Core.Tests\Nook.Core.Tests.csproj", "{B3501830-858C-42C2-9EC0-45FF97BA2094}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nook.CodeAnalysis.Tests", "tests\Nook.CodeAnalysis.Tests\Nook.CodeAnalysis.Tests.csproj", "{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8844496A-240B-425C-9B31-3AA8404B25BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8844496A-240B-425C-9B31-3AA8404B25BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8844496A-240B-425C-9B31-3AA8404B25BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8844496A-240B-425C-9B31-3AA8404B25BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BEA1134-11DA-4DFF-98AA-815529C83E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEA1134-11DA-4DFF-98AA-815529C83E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEA1134-11DA-4DFF-98AA-815529C83E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEA1134-11DA-4DFF-98AA-815529C83E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3501830-858C-42C2-9EC0-45FF97BA2094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3501830-858C-42C2-9EC0-45FF97BA2094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3501830-858C-42C2-9EC0-45FF97BA2094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3501830-858C-42C2-9EC0-45FF97BA2094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8844496A-240B-425C-9B31-3AA8404B25BC} = {D33B0272-0540-4F0B-A198-4ED0CD2E8EF3}
+		{9BEA1134-11DA-4DFF-98AA-815529C83E90} = {D33B0272-0540-4F0B-A198-4ED0CD2E8EF3}
+		{B3501830-858C-42C2-9EC0-45FF97BA2094} = {2F2150D8-1CCF-4EA1-8A54-E1AF2BB1D023}
+		{D9D7DBD0-E7C2-4599-BFF1-C9EEE8E1CF69} = {2F2150D8-1CCF-4EA1-8A54-E1AF2BB1D023}
+	EndGlobalSection
+EndGlobal
