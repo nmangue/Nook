@@ -2,15 +2,8 @@
 
 namespace BlazorIntegration.Store;
 
-public class CounterState
+public record CounterState(int Counter)
 {
-    public int Counter { get; }
-
-    public CounterState(int counter)
-    {
-        Counter = counter;
-    }
-
     public CounterState() : this(0)
     {
         // Rien à faire
