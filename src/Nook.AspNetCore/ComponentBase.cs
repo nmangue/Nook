@@ -6,7 +6,7 @@ namespace Nook.AspNetCore;
 public abstract class ComponentBase<TStore>
     : ComponentBase where TStore : IStore, new()
 {
-    [Microsoft.AspNetCore.Components.Inject]
+    [Inject]
     protected IUse<TStore> Store { get; private set; } = default!;
 
     protected override void OnInitialized()

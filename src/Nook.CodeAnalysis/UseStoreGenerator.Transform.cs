@@ -9,7 +9,7 @@ public partial class UseStoreGenerator
 {
     private const string FromServicesAttributeFqn = "global::Microsoft.AspNetCore.Mvc.FromServicesAttribute";
     private static readonly string ActionAttributeFqn = $"global::Nook.Core.ActionAttribute";
-    private static readonly string InjectAttributeFqn = $"global::Nook.Core.InjectAttribute";
+    private static readonly string AsServiceAttributeFqn = $"global::Nook.Core.AsServiceAttribute";
 
     private static IInfos? GetStoreInfos(GeneratorSyntaxContext context)
     {
@@ -65,5 +65,5 @@ public partial class UseStoreGenerator
 
     private static bool ShouldParameterBeBound(IParameterSymbol p)
         => p.HasAttribute(FromServicesAttributeFqn) ||
-           p.HasAttribute(InjectAttributeFqn);
+           p.HasAttribute(AsServiceAttributeFqn);
 }

@@ -20,7 +20,7 @@ internal static class AsyncAction
             public class MyAsyncStore : Store<MyState>
             {
                 [Action]
-                public async Task<MyState> RunHeavyCompute([Inject] IRepository repository, int coef, CancellationToken cancellationToken)
+                public async Task<MyState> RunHeavyCompute([AsService] IRepository repository, int coef, CancellationToken cancellationToken)
                 {
                     await Task.Delay(TimeSpan.FromSeconds(42));
                     return new(CurrentState.Counter + coef);
