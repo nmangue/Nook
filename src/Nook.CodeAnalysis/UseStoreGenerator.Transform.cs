@@ -2,15 +2,14 @@
 using Microsoft.CodeAnalysis;
 using System.Linq;
 using System.Collections.Immutable;
-using Nook.Core;
 
 namespace Nook.CodeAnalysis;
 
 public partial class UseStoreGenerator
 {
     private const string FromServicesAttributeFqn = "global::Microsoft.AspNetCore.Mvc.FromServicesAttribute";
-    private static readonly string ActionAttributeFqn = $"global::{typeof(ActionAttribute).FullName}";
-    private static readonly string InjectAttributeFqn = $"global::{typeof(InjectAttribute).FullName}";
+    private static readonly string ActionAttributeFqn = $"global::Nook.Core.ActionAttribute";
+    private static readonly string InjectAttributeFqn = $"global::Nook.Core.InjectAttribute";
 
     private static IInfos? GetStoreInfos(GeneratorSyntaxContext context)
     {

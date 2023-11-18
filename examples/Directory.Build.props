@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <ParentDirectoryBuildPropsPath>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))</ParentDirectoryBuildPropsPath>
+  </PropertyGroup>
+  
+  <ImportGroup>
+    <Import Project="$(ParentDirectoryBuildPropsPath)" />
+  </ImportGroup>
+  
+  <PropertyGroup>
+    <RestoreAdditionalProjectSources>../../src/Nook.Core/bin/$(Configuration);../../src/Nook.CodeAnalysis/bin/$(Configuration)</RestoreAdditionalProjectSources>
+  </PropertyGroup>
+</Project>

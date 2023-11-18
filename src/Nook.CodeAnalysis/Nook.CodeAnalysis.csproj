@@ -3,10 +3,17 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
 		<IsRoslynComponent>true</IsRoslynComponent>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Nook.CodeAnalysis</PackageId>
+		<Description>$(CommonDescription) - Source generators</Description>
+		<Version>$(CodeAnalysisVersion)</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -16,7 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Nook.Core\Nook.Core.csproj" />
+		<None Include="$(OutputPath)\Nook.CodeAnalysis.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
 	</ItemGroup>
 
 </Project>

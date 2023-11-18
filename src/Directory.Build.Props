@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup>
+    <ParentDirectoryBuildPropsPath>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)..\'))</ParentDirectoryBuildPropsPath>
+  </PropertyGroup>
+  
+  <ImportGroup>
+    <Import Project="$(ParentDirectoryBuildPropsPath)" />
+  </ImportGroup>
+  
+  <PropertyGroup>
+    <Authors>Nicolas MANGUÉ</Authors>
+    <PackageProjectUrl>https://github.com/nmangue/Nook</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nmangue/Nook</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <CommonDescription>Experimental Store for .NET </CommonDescription>
+    <PackageTags>Store, State, Flux</PackageTags>
+  </PropertyGroup>
+</Project>
