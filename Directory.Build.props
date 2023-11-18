@@ -2,5 +2,6 @@
   <PropertyGroup>
     <CoreVersion>0.2.0</CoreVersion>
     <CodeAnalysisVersion>0.2.1</CodeAnalysisVersion>
+    <AspNetCoreVersion>0.1.0</AspNetCoreVersion>
   </PropertyGroup>
 </Project>

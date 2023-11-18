@@ -8,6 +8,6 @@
   </ImportGroup>
   
   <PropertyGroup>
-    <RestoreAdditionalProjectSources>../../src/Nook.Core/bin/$(Configuration);../../src/Nook.CodeAnalysis/bin/$(Configuration)</RestoreAdditionalProjectSources>
+    <RestoreAdditionalProjectSources>../../src/Nook.Core/bin/$(Configuration);../../src/Nook.CodeAnalysis/bin/$(Configuration);../../src/Nook.AspNetCore/bin/$(Configuration)</RestoreAdditionalProjectSources>
   </PropertyGroup>
 </Project>

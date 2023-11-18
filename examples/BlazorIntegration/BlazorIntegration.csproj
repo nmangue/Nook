@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Nook.Core" Version="$(CoreVersion)" />
     <PackageReference Include="Nook.CodeAnalysis" Version="$(CodeAnalysisVersion)" />
+    <PackageReference Include="Nook.AspNetCore" Version="$(AspNetCoreVersion)" />
   </ItemGroup>
 
 </Project>
