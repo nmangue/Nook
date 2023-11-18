@@ -33,7 +33,7 @@ public partial class UseStoreGenerator
         if (context.Node is MethodDeclarationSyntax mds)
         {
             if (context.SemanticModel.GetDeclaredSymbol(mds) is IMethodSymbol ms &&
-                ms.HasActionAttribute())
+                ms.HasAttribute("global::Nook.Core.ActionAttribute"))
             {
                 var storeType = ms.ReceiverType as INamedTypeSymbol;
                 var stateType = ms.ReturnType as INamedTypeSymbol;
@@ -49,7 +49,7 @@ public partial class UseStoreGenerator
                 if (storeType != null && stateType != null)
                 {
                     var parameters = ms.Parameters
-                        .Select(p => new ActionParameterInfos(p, p.HasFromServiceAttribute() || p.HasBindFromServicesAttribute()))
+                        .Select(p => new ActionParameterInfos(p, ShouldParameterBeBound(p)))
                         .ToImmutableList();
 
                     return new ActionDeclaration(ms, storeType, stateType, isAsync, parameters);
@@ -58,4 +58,8 @@ public partial class UseStoreGenerator
         }
         return null;
     }
+
+    private static bool ShouldParameterBeBound(IParameterSymbol p)
+        => p.HasAttribute("global::Microsoft.AspNetCore.Mvc.FromServicesAttribute") ||
+           p.HasAttribute("global::Nook.Core.BindFromServicesAttribute");
 }

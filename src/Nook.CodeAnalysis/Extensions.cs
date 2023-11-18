@@ -37,15 +37,6 @@ internal static class Extensions
     public static void WriteBlankLine(this IndentedTextWriter writer)
         => writer.WriteLineNoTabs(null!);
 
-    public static bool HasFromServiceAttribute(this IParameterSymbol parameterSymbol)
-        => parameterSymbol.HasAttribute("global::Microsoft.AspNetCore.Mvc.FromServicesAttribute");
-
-    public static bool HasBindFromServicesAttribute(this IParameterSymbol parameterSymbol)
-        => parameterSymbol.HasAttribute("global::Nook.Core.BindFromServicesAttribute");
-
-    public static bool HasActionAttribute(this IMethodSymbol method)
-        => method.HasAttribute("global::Nook.Core.ActionAttribute");
-
     public static bool HasAttribute(this ISymbol parameterSymbol, string attributeClassFqn) 
         => parameterSymbol.GetAttributes().Any(a => a.AttributeClass?.GetFullyQualifiedName() == attributeClassFqn);
 
