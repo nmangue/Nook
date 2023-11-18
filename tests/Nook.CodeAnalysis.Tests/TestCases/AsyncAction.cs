@@ -35,7 +35,7 @@ internal static class AsyncAction
         
         namespace AsyncActionTest;
         
-        static partial class UseMyAsyncStore
+        static partial class UseMyAsyncStoreNookExtensions
         {
             public static global::AsyncActionTest.MyState GetState(this global::Nook.Core.IUse<global::AsyncActionTest.MyAsyncStore> value)
             {

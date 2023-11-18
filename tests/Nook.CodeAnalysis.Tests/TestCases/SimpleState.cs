@@ -48,7 +48,7 @@ internal static class SimpleState
         
         namespace GeneratorTests;
         
-        static partial class UseMyStore
+        static partial class UseMyStoreNookExtensions
         {
             public static global::GeneratorTests.MyState GetState(this global::Nook.Core.IUse<global::GeneratorTests.MyStore> value)
             {

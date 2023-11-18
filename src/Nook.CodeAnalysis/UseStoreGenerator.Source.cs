@@ -37,7 +37,9 @@ public partial class UseStoreGenerator
 
             var x = declaration.StoreType.Name;
 
-            using (document.WriteBlock($"static partial class Use{declaration.StoreType.Name}"))
+            var generatedClassName = $"Use{declaration.StoreType.Name}NookExtensions";
+
+            using (document.WriteBlock($"static partial class {generatedClassName}"))
             {
                 var storeTypeFqn = declaration.StoreType.GetFullyQualifiedName();
                 var stateTypeFqn = declaration.StateType.GetFullyQualifiedName();
@@ -91,7 +93,7 @@ public partial class UseStoreGenerator
                 }
             }
 
-            context.AddSource($"Use{declaration.StoreType.Name}.g.cs", writer.ToString());
+            context.AddSource($"{generatedClassName}.g.cs", writer.ToString());
         }
     }
 

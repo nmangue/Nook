@@ -25,7 +25,7 @@ internal static class MinimalStore
         
         namespace MinimalStoreTest;
         
-        static partial class UseMinimalStore
+        static partial class UseMinimalStoreNookExtensions
         {
             public static global::MinimalStoreTest.MyState GetState(this global::Nook.Core.IUse<global::MinimalStoreTest.MinimalStore> value)
             {
