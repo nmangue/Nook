@@ -2,11 +2,16 @@
 using Microsoft.CodeAnalysis;
 using System.Linq;
 using System.Collections.Immutable;
+using Nook.Core;
 
 namespace Nook.CodeAnalysis;
 
 public partial class UseStoreGenerator
 {
+    private const string FromServicesAttributeFqn = "global::Microsoft.AspNetCore.Mvc.FromServicesAttribute";
+    private static readonly string ActionAttributeFqn = $"global::{typeof(ActionAttribute).FullName}";
+    private static readonly string InjectAttributeFqn = $"global::{typeof(InjectAttribute).FullName}";
+
     private static IInfos? GetStoreInfos(GeneratorSyntaxContext context)
     {
         if (context.Node is ClassDeclarationSyntax targetStoreCds)
@@ -33,7 +38,7 @@ public partial class UseStoreGenerator
         if (context.Node is MethodDeclarationSyntax mds)
         {
             if (context.SemanticModel.GetDeclaredSymbol(mds) is IMethodSymbol ms &&
-                ms.HasAttribute("global::Nook.Core.ActionAttribute"))
+                ms.HasAttribute(ActionAttributeFqn))
             {
                 var storeType = ms.ReceiverType as INamedTypeSymbol;
                 var stateType = ms.ReturnType as INamedTypeSymbol;
@@ -60,6 +65,6 @@ public partial class UseStoreGenerator
     }
 
     private static bool ShouldParameterBeBound(IParameterSymbol p)
-        => p.HasAttribute("global::Microsoft.AspNetCore.Mvc.FromServicesAttribute") ||
-           p.HasAttribute("global::Nook.Core.InjectAttribute");
+        => p.HasAttribute(FromServicesAttributeFqn) ||
+           p.HasAttribute(InjectAttributeFqn);
 }
