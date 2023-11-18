@@ -5,7 +5,7 @@
 /// from the service provider on the action method call.
 /// </summary>
 [AttributeUsage(AttributeTargets.Parameter)]
-public class BindFromServicesAttribute : Attribute
+public class InjectAttribute : Attribute
 {
     // Nothing to do
 }

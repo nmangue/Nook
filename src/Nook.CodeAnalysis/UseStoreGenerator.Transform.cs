@@ -61,5 +61,5 @@ public partial class UseStoreGenerator
 
     private static bool ShouldParameterBeBound(IParameterSymbol p)
         => p.HasAttribute("global::Microsoft.AspNetCore.Mvc.FromServicesAttribute") ||
-           p.HasAttribute("global::Nook.Core.BindFromServicesAttribute");
+           p.HasAttribute("global::Nook.Core.InjectAttribute");
 }
