@@ -33,4 +33,10 @@
 	  <ProjectReference Include="..\..\src\Nook.Core\Nook.Core.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Update="FakeRazorProject\Hello.razor">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>
