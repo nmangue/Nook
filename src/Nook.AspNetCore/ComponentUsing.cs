@@ -3,7 +3,7 @@ using Nook.Core;
 
 namespace Nook.AspNetCore;
 
-public abstract class ComponentBase<TStore>
+public abstract class ComponentUsing<TStore>
     : ComponentBase where TStore : IStore, new()
 {
     [Inject]
