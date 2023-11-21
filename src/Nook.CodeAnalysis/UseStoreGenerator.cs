@@ -2,7 +2,6 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.CodeAnalysis.Razor;
 using Microsoft.CodeAnalysis.Text;
 using RazorBlade.Analyzers;
 using System;
@@ -10,8 +9,6 @@ using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
-using System.Threading;
 
 namespace Nook.CodeAnalysis;
 
@@ -21,7 +18,7 @@ public partial class UseStoreGenerator : IIncrementalGenerator
 	public void Initialize(IncrementalGeneratorInitializationContext context)
 	{
         var source = context.SyntaxProvider.CreateSyntaxProvider(
-                static (node, ct) => IsClassExtendingStore(node) || IsActionMethod(node),
+                static (node, ct) => node.IsClassExtendingStore() || IsActionMethod(node),
                 static (context, _) => GetStoreInfos(context) ?? GetActionInfos(context)
             )
             .WhereNotNull()

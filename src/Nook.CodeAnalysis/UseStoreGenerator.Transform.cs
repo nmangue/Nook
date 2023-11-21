@@ -28,7 +28,7 @@ public partial class UseStoreGenerator
 
     private static IdentifierNameSyntax? GetStateClass(ClassDeclarationSyntax storeImplementationCds)
     {
-        var storeBaseNode = GetStoreBaseNode(storeImplementationCds)!;
+        var storeBaseNode = storeImplementationCds.GetStoreBaseNode()!;
         return storeBaseNode.TypeArgumentList.Arguments.SingleOrDefault() is IdentifierNameSyntax stateIns ? stateIns : null;
     }
 

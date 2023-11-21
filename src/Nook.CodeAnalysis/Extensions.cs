@@ -10,6 +10,24 @@ namespace Nook.CodeAnalysis;
 
 internal static class Extensions
 {
+    public static bool IsClassExtendingStore(this SyntaxNode syntaxNode)
+        => GetStoreBaseNode(syntaxNode) != null;
+
+    public static GenericNameSyntax? GetStoreBaseNode(this SyntaxNode node)
+    {
+        if (node is ClassDeclarationSyntax cds && cds.BaseList != null)
+        {
+            foreach (var baseType in cds.BaseList.Types.OfType<SimpleBaseTypeSyntax>())
+            {
+                if (baseType.Type is GenericNameSyntax gns && gns.Identifier.Text.EndsWith("Store"))
+                {
+                    return gns;
+                }
+            }
+        }
+        return null;
+    }
+
     public static IncrementalValuesProvider<T> WhereNotNull<T>(this IncrementalValuesProvider<T?> o)
         => o.Where(x => x != null)!;
 
