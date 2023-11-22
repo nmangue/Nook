@@ -2,7 +2,8 @@
 @using BlazorIntegration.Store;
 @using Nook.AspNetCore;
 
-@inherits ComponentBase<CounterStore>;
+@inherits ComponentUsing<CounterStore>
+
 @{var state = Store.GetState();}
 
 <PageTitle>Counter</PageTitle>
