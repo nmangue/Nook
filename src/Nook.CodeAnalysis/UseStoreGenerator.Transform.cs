@@ -11,7 +11,7 @@ public partial class UseStoreGenerator
     private static readonly string ActionAttributeFqn = $"global::Nook.Core.ActionAttribute";
     private static readonly string AsServiceAttributeFqn = $"global::Nook.Core.AsServiceAttribute";
 
-    private static IInfos? GetStoreInfos(GeneratorSyntaxContext context)
+    public static IInfos? GetStoreInfos(GeneratorSyntaxContext context)
     {
         if (context.Node is ClassDeclarationSyntax targetStoreCds)
         {
@@ -26,10 +26,14 @@ public partial class UseStoreGenerator
         return null;
     }
 
-    private static IdentifierNameSyntax? GetStateClass(ClassDeclarationSyntax storeImplementationCds)
+    private static IdentifierNameSyntax? GetStateClass(SyntaxNode node)
     {
-        var storeBaseNode = storeImplementationCds.GetStoreBaseNode()!;
-        return storeBaseNode.TypeArgumentList.Arguments.SingleOrDefault() is IdentifierNameSyntax stateIns ? stateIns : null;
+        if (node is ClassDeclarationSyntax storeImplementationCds)
+        {
+            var storeBaseNode = storeImplementationCds.GetStoreBaseNode()!;
+            return storeBaseNode.TypeArgumentList.Arguments.SingleOrDefault() is IdentifierNameSyntax stateIns ? stateIns : null;
+        }
+        return null;
     }
 
     private static IInfos? GetActionInfos(GeneratorSyntaxContext context)
