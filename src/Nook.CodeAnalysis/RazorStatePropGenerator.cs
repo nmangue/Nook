@@ -77,7 +77,7 @@ public class RazorStatePropGenerator : IIncrementalGenerator
                     */
                     public const int Value = 42;
 
-                    public {{storeDeclaration?.StateType.GetFullyQualifiedName()}} State => Store.GetState();
+                    public {{storeDeclaration?.StateType.GetFullyQualifiedName()}} State => ((global::Nook.Core.Use<{{storeDeclaration?.StoreType.GetFullyQualifiedName()}}>)Store).Instance.CurrentState;
                 }
                 """);
         });
